@@ -54,7 +54,7 @@ def update_item(item_id):
 @app.route('/items/<int:item_id>', methods = ['DELETE'])
 def delete_item(item_id):
     global items
-    items = next((item for item in items if item["id"] != item_id))
+    items = [item for item in items if item["id"] != item_id]
     return jsonify({"result": "Item deleted"})
 
 if __name__ == "__main__":
