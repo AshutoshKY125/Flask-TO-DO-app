@@ -1,3 +1,26 @@
-<h1>
-    Welcome to to-do flask app.
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask TO-DO App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>My TO-DO List</h1>
+
+        <form id="task-form">
+            <input type="text" id="task-name" placeholder="Task Name" required>
+            <input type="text" id="task-description" placeholder="Description (optional)">
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul id="task-list">
+            <!-- Tasks will be loaded here by JavaScript -->
+        </ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
